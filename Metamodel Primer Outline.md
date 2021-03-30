@@ -1,5 +1,7 @@
 # Model Primer Outline
 
+**Primer needs to be standalone, but linked to other materials.**
+
 Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 ## Background: How We Got Here
@@ -30,6 +32,8 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 - NIEM: defining real world things
 - Metamodel: defining modeling concepts
 
+Neutral intermediate format.
+
 ```xml
 <example/>
 
@@ -38,6 +42,10 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 
 - sort of like how NIEM doesn't itself define an exchange; it's a means for you to define an exchange yourself.
 - NIEM is just _one_ possible model
+
+## Why Not Just Use RFD/RDFS?
+
+NIEM models have details that aren't easily captured. cardinality and field typing.
 
 ## Terminology
 
