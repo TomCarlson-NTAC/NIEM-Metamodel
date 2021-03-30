@@ -9,4 +9,5 @@
 
 - [[Webb Roberts]](https://github.com/webb/niem-metamodel)
 - [[Scott Renner]](https://github.com/iamdrscott/niem-metamodel)
+- [[Jim Cabral]](https://github.com/cabralje/niem-tools)
 
