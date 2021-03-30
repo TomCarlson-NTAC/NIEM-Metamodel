@@ -2,6 +2,10 @@
 
 Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
+## Background: How We Got Here
+
+Start with the NIEM story. Messages, XMl Schema, but what if you don't want XML Schema. Do it in other formalisms. N-squared diagram. Intermediate format.
+
 ## Problem/Issue
 
 Modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. This works for simpler things, but complicated real-world concepts require thought to see them while they're embedded in SML Schema
@@ -22,9 +26,12 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 
 "Metamodel" is a framework (_better term?_) for building models.
 
-- The metamodel itself isn't the model. (Although _technically_ is **a** model itself.) It's a means of defining a model. It provides a way to s
+- The metamodel itself isn't the NIEM model. "Neutral modeling formalism" (formalism/language?) for these models. (Although _technically_ is **a** model itself. **cut this**) It's a means of defining a model. It provides a way to s...
+- NIEM: defining real world things
+- Metamodel: defining modeling concepts
 
 ```xml
+<example/>
 
 ```
 
