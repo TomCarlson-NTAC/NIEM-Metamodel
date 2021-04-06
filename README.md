@@ -2,8 +2,8 @@
 
 ## Files Here
 
-- [Metamodel Primer Outline](Metamodel Primer Outline.md)
-- [Metamodel Notes from 2020-08-25](Metamodel Notes from 2020-08-25.md)
+- [Metamodel Primer Outline](https://github.com/NIEM/NIEM-Modeling-Formalism/blob/main/Metamodel%20Primer%20Outline.md)
+- [Metamodel Notes from 2020-08-25](https://github.com/NIEM/NIEM-Modeling-Formalism/blob/main/Metamodel%20Notes%20from%202020-08-25.md)
 
 ## Other Metamodel-Related Repos
 
