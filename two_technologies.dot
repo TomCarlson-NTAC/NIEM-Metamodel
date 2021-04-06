@@ -5,7 +5,7 @@ graph means {
 	xml[label="XML Schema"];
 	json[label="JSON-LD"];
 	
-	xml -- json[style="dashed"];
+	xml -- json[style="dotted"];
 
 
 }
