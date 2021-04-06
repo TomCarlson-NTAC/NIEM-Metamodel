@@ -11,24 +11,24 @@ graph lotsameans {
 	
 	sql[label="SQL"];
 	
-	xml -- uml[style="dashed"];
-	xml -- json[style="dashed"];
-	xml -- rdf[style="dashed"];
-	xml -- dot[style="dashed"];
-	xml -- sql[style="dashed"];
+	xml -- uml[style="dotted"];
+	xml -- json[style="dotted"];
+	xml -- rdf[style="dotted"];
+	xml -- dot[style="dotted"];
+	xml -- sql[style="dotted"];
 
-	uml -- json[style="dashed"];
-	uml -- rdf[style="dashed"];
-	uml -- dot[style="dashed"];
-	uml -- sql[style="dashed"];
+	uml -- json[style="dotted"];
+	uml -- rdf[style="dotted"];
+	uml -- dot[style="dotted"];
+	uml -- sql[style="dotted"];
 	
-	json -- rdf[style="dashed"];
-	json -- dot[style="dashed"];
-	json -- sql[style="dashed"];
+	json -- rdf[style="dotted"];
+	json -- dot[style="dotted"];
+	json -- sql[style="dotted"];
 	
-	rdf -- dot[style="dashed"];
-	rdf -- sql[style="dashed"];
+	rdf -- dot[style="dotted"];
+	rdf -- sql[style="dotted"];
 	
-	dot -- sql[style="dashed"];
+	dot -- sql[style="dotted"];
 
 }

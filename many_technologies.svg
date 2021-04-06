@@ -21,7 +21,7 @@
 </g>
 <!-- xml&#45;&#45;uml -->
 <g id="edge1" class="edge"><title>xml&#45;&#45;uml</title>
-<path fill="none" stroke="black" d="M238.661,-35.2068C250.955,-56.5009 271.772,-92.556 284.109,-113.925"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M238.661,-35.2068C250.955,-56.5009 271.772,-92.556 284.109,-113.925"/>
 </g>
 <!-- json -->
 <g id="node3" class="node"><title>json</title>
@@ -30,7 +30,7 @@
 </g>
 <!-- xml&#45;&#45;json -->
 <g id="edge2" class="edge"><title>xml&#45;&#45;json</title>
-<path fill="none" stroke="black" d="M206.598,-30.776C169.011,-52.4769 93.0881,-96.3111 55.1486,-118.215"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M206.598,-30.776C169.011,-52.4769 93.0881,-96.3111 55.1486,-118.215"/>
 </g>
 <!-- rdf -->
 <g id="node4" class="node"><title>rdf</title>
@@ -39,7 +39,7 @@
 </g>
 <!-- xml&#45;&#45;rdf -->
 <g id="edge3" class="edge"><title>xml&#45;&#45;rdf</title>
-<path fill="none" stroke="black" d="M218.679,-35.4036C194.268,-77.6843 132.071,-185.413 107.81,-227.434"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M218.679,-35.4036C194.268,-77.6843 132.071,-185.413 107.81,-227.434"/>
 </g>
 <!-- dot -->
 <g id="node5" class="node"><title>dot</title>
@@ -48,7 +48,7 @@
 </g>
 <!-- xml&#45;&#45;dot -->
 <g id="edge4" class="edge"><title>xml&#45;&#45;dot</title>
-<path fill="none" stroke="black" d="M228.727,-36.1595C228.727,-78.5859 228.727,-183.829 228.727,-226.341"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M228.727,-36.1595C228.727,-78.5859 228.727,-183.829 228.727,-226.341"/>
 </g>
 <!-- sql -->
 <g id="node6" class="node"><title>sql</title>
@@ -57,47 +57,47 @@
 </g>
 <!-- xml&#45;&#45;sql -->
 <g id="edge5" class="edge"><title>xml&#45;&#45;sql</title>
-<path fill="none" stroke="black" d="M197.392,-18C175.622,-18 146.866,-18 125.871,-18"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M197.392,-18C175.622,-18 146.866,-18 125.871,-18"/>
 </g>
 <!-- uml&#45;&#45;json -->
 <g id="edge6" class="edge"><title>uml&#45;&#45;json</title>
-<path fill="none" stroke="black" d="M262.837,-131.293C212.921,-131.293 115.766,-131.293 65.0638,-131.293"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M262.837,-131.293C212.921,-131.293 115.766,-131.293 65.0638,-131.293"/>
 </g>
 <!-- uml&#45;&#45;rdf -->
 <g id="edge7" class="edge"><title>uml&#45;&#45;rdf</title>
-<path fill="none" stroke="black" d="M272.008,-144.069C233.92,-166.06 156.467,-210.777 119.061,-232.373"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M272.008,-144.069C233.92,-166.06 156.467,-210.777 119.061,-232.373"/>
 </g>
 <!-- uml&#45;&#45;dot -->
 <g id="edge8" class="edge"><title>uml&#45;&#45;dot</title>
-<path fill="none" stroke="black" d="M284.202,-148.5C271.837,-169.918 250.85,-206.269 238.54,-227.589"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M284.202,-148.5C271.837,-169.918 250.85,-206.269 238.54,-227.589"/>
 </g>
 <!-- uml&#45;&#45;sql -->
 <g id="edge9" class="edge"><title>uml&#45;&#45;sql</title>
-<path fill="none" stroke="black" d="M272.008,-118.517C233.82,-96.4692 156.059,-51.5739 118.767,-30.0435"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M272.008,-118.517C233.82,-96.4692 156.059,-51.5739 118.767,-30.0435"/>
 </g>
 <!-- json&#45;&#45;rdf -->
 <g id="edge10" class="edge"><title>json&#45;&#45;rdf</title>
-<path fill="none" stroke="black" d="M42.4315,-148.5C54.7971,-169.918 75.7844,-206.269 88.0935,-227.589"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M42.4315,-148.5C54.7971,-169.918 75.7844,-206.269 88.0935,-227.589"/>
 </g>
 <!-- json&#45;&#45;dot -->
 <g id="edge11" class="edge"><title>json&#45;&#45;dot</title>
-<path fill="none" stroke="black" d="M55.0072,-144.29C93.1612,-166.318 170.019,-210.691 207.374,-232.258"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M55.0072,-144.29C93.1612,-166.318 170.019,-210.691 207.374,-232.258"/>
 </g>
 <!-- json&#45;&#45;sql -->
 <g id="edge12" class="edge"><title>json&#45;&#45;sql</title>
-<path fill="none" stroke="black" d="M42.4315,-114.087C54.7971,-92.6687 75.7844,-56.3176 88.0935,-34.9975"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M42.4315,-114.087C54.7971,-92.6687 75.7844,-56.3176 88.0935,-34.9975"/>
 </g>
 <!-- rdf&#45;&#45;dot -->
 <g id="edge13" class="edge"><title>rdf&#45;&#45;dot</title>
-<path fill="none" stroke="black" d="M126.616,-244.587C148.127,-244.587 177.467,-244.587 199.178,-244.587"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M126.616,-244.587C148.127,-244.587 177.467,-244.587 199.178,-244.587"/>
 </g>
 <!-- rdf&#45;&#45;sql -->
 <g id="edge14" class="edge"><title>rdf&#45;&#45;sql</title>
-<path fill="none" stroke="black" d="M97.907,-226.427C97.907,-184.001 97.907,-78.7577 97.907,-36.246"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M97.907,-226.427C97.907,-184.001 97.907,-78.7577 97.907,-36.246"/>
 </g>
 <!-- dot&#45;&#45;sql -->
 <g id="edge15" class="edge"><title>dot&#45;&#45;sql</title>
-<path fill="none" stroke="black" d="M218.894,-227.556C194.591,-185.461 131.911,-76.8963 107.675,-34.9194"/>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M218.894,-227.556C194.591,-185.461 131.911,-76.8963 107.675,-34.9194"/>
 </g>
 </g>
 </svg>
