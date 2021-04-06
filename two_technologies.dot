@@ -3,9 +3,9 @@ graph means {
 	layout="circo";
 	
 	xml[label="XML Schema"];
-	json[label="JSON"];
+	json[label="JSON-LD"];
 	
-	xml -- json;
+	xml -- json[style="dashed"];
 
 
 }
