@@ -6,7 +6,18 @@ Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 ## Background: How We Got Here
 
-Start with the NIEM story. Messages, XML Schema, but what if you don't want XML Schema. Do it in other formalisms. N-squared diagram. Intermediate format.
+Start with the NIEM story. Messages, XML Schema, but what if you don't want XML Schema. Do it in 
+other formalisms. N-squared diagram. Intermediate format.
+
+NIEM began as a framework for building and defining messages to facilitate exchanges of information. Part of that framework was a defined process. Part of the framework was a model that formed a base on which exchanges were defined. That base would be both carved down _and_ extended to meet the needs of each exchange.
+
+That base existed as a set of XML Schema documents.
+
+As other means of exchanging information became popular, notably JSON, the community needs expanded to using NIEM with exchange mechanisms other than XML Schema.
+
+
+
+
 
 N-squared for exchanges => standardized and centralized
 
