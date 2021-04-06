@@ -16,8 +16,11 @@ That base existed as a set of XML Schema documents.
 As other means of exchanging information became popular, notably JSON, the community needs expanded to using NIEM with exchange mechanisms other than XML Schema.
 
 
+![Two Technologies](two_technologies.svg)
 
+![N-Squared Technologies](many_technologies.svg)
 
+![Standardized and Centralized](model_centric.svg)
 
 N-squared for exchanges => standardized and centralized
 
