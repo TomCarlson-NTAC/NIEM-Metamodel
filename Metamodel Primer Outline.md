@@ -6,7 +6,11 @@ Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 ## Background: How We Got Here
 
-Start with the NIEM story. Messages, XMl Schema, but what if you don't want XML Schema. Do it in other formalisms. N-squared diagram. Intermediate format.
+Start with the NIEM story. Messages, XML Schema, but what if you don't want XML Schema. Do it in other formalisms. N-squared diagram. Intermediate format.
+
+N-squared for exchanges => standardized and centralized
+
+N-squared for models => standardized and centralized
 
 ## Problem/Issue
 
