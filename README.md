@@ -2,8 +2,8 @@
 
 ## Files Here
 
-- [[Metamodel Primer Outline]]
-- [[Metamodel Notes from 2020-08-25]]
+- [Metamodel Primer Outline](Metamodel Primer Outline.md)
+- [Metamodel Notes from 2020-08-25](Metamodel Notes from 2020-08-25.md)
 
 ## Other Metamodel-Related Repos
 
