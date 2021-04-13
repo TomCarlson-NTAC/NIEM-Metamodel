@@ -41,7 +41,9 @@ The same concept applies here with models and technologies. Instead of individua
 
 Modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. This works for simpler things, but complicated real-world concepts require thought to see them while they're embedded in SML Schema
 
-## Example of Embedding
+## Hazards of Embedding
+
+**I'm not sure this is appropriate for the primer.**
 
 How do we know something in NIEM is a code table without scouring the NDR for the information? Simply looking at the schemas can be misleading. It looks like code tables are built on the `xs:token` type, but restricted to a selection of specific enumerations.
 
@@ -53,10 +55,13 @@ The answer is that the representation term, the end of the element/type name, mu
 
 There are multiple ways that the schema _could_ define something as a code table, but only one is the actual one true way.
 
+Model examples from which to draw:
+- niem-metamodel-master/example/extension.xml
+
 A model instance built from the metamodel will answer that question more clearly, in the model instance. It looks like this:
 
 ```xml
-<sample metamodel model xml/>
+<request>Does Jim Cabral have a facet example I could put here</request>
 ```
 
 Forces technology-to-technology conversions, e.g. XML Schema -> JSON. These can be hard.
@@ -73,17 +78,15 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 
 ## How It Works
 
-"Metamodel" is a framework (_better term?_) for building models.
+"Metamodel" is a framework for building models. The metamodel itself isn't the NIEM model. It's a "neutral modeling formalism," for these models. It's a means of defining a model. It provides the means to define a model, as compared to NIEM which is a means for defining real world objects:
 
-- The metamodel itself isn't the NIEM model. "Neutral modeling formalism" (formalism/language?) for these models. It's a means of defining a model. It provides a way to s...
-- NIEM: defining real world things
-- Metamodel: defining modeling concepts
+- NIEM: Defines real world things
+- Metamodel: Defines modeling concepts
 
-Neutral intermediate format.
+Neutral intermediate format. (Which is the intermediate format? A model instance.)
 
 ```xml
-<example/>
-
+<example>Pull part of Webb's claim example for this.<example/>
 ```
 
 
@@ -92,29 +95,34 @@ Neutral intermediate format.
 
 ## Why Not Just Use RFD/RDFS?
 
-NIEM models have details that aren't easily captured. cardinality and field typing.
+NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
 
 ## Terminology
 
 ### Metamodel
 
-The framework itself is the "metamodel." It's an abstraction of what models are made up of.
+The framework itself is the "Metamodel." It's an abstraction of what makes up a model.
 
 ### Model Instance
 
-Generically speaking, when you create a model from the metamodel, you get a "model instance." This is a conceptual model 
+Generically speaking, when you create a model from the metamodel, you get a "model instance." This is a conceptual model reflecting the objects and relationships in a subject area. This does _not_ have to be NIEM. The Metamodel could be used to create a wide variety of different model instances.
 
 ### NIEM Model Instance
 
-When you create a specific model, that model instance gets a prefix determined by what specific model you've created. If you create the NIEM as a model, that's a "NIEM Model Instance ([[NMI]])."
+When you create a specific model, that model instance gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for real-world exchanges, it need to be instantiated into some format.
 
 ### NIEM Model Instance XML/JSON
 
-When you then convert (render?) that model to a representation in a particular technology, then it get's the technology added as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance XML ([[NMIX]]). If you've converted it to JSON, it's a "NIEM Model Instance JSON ([[NMIJ]])."
+Converting that model to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance XML ([[NMIX]]). If you've converted it to JSON, it's a "NIEM Model Instance JSON ([[NMIJ]])."
 
 Note that a NIEM Model Instance XML ([[NMIX]]) is what we currently call "NIEM." The metamodel abstracts that up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
 
 XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
+
+![Terminology](terminology.svg)
+
+![Terminology (briefer)](terminology_brief.svg)
+
 
 ## Benefits
 

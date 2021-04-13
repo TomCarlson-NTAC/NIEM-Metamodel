@@ -1,0 +1,21 @@
+digraph terms {
+
+compound=true;
+
+	metamodel[label="The Metamodel\n(Defines what models look like)", shape="folder"];
+
+	subgraph cluster0 {
+	
+		label="NIEM Model Instance\n(A conceptual model, following the rules in the Metamodel)";
+	
+		nmix[label="NIEM Model Instance (XML)\n(A conceptual model instantiated in XML Schema)", shape="folder"];
+		nmij[label="NIEM Model Instance (JSON)\n(A conceptual model instantiated in JSON schema)", shape="folder"];
+		nmiw[label="NIEM Model Instance (whatever)\n(A conceptual model instantiated in something other technology)", shape="folder"];
+
+	}
+
+	metamodel -> nmix[lhead="cluster0", label="defines"];
+	metamodel -> nmij[lhead="cluster0", label="defines"];
+	metamodel -> nmiw[lhead="cluster0", label="defines"];
+
+}

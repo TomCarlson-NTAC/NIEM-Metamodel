@@ -1,0 +1,21 @@
+digraph specs {
+
+compound=true;
+
+	metamodel[label="The Metamodel", shape="folder"];
+
+	subgraph cluster0 {
+	
+		label="NIEM Model Instance";
+	
+		nmix[label="NIEM Model Instance (XML)", shape="folder"];
+		nmij[label="NIEM Model Instance (JSON)", shape="folder"];
+		nmiw[label="NIEM Model Instance (whatever)", shape="folder"];
+
+	}
+
+	metamodel -> nmix[lhead="cluster0", label="defines"];
+	metamodel -> nmij[lhead="cluster0", label="defines"];
+	metamodel -> nmiw[lhead="cluster0", label="defines"];
+
+}
