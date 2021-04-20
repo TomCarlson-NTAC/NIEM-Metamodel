@@ -6,9 +6,6 @@ Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 ## Background: How We Got Here
 
->Start with the NIEM story. Messages, XML Schema, but what if you don't want XML Schema. Do it in 
-other formalisms. N-squared diagram. Intermediate format.
-
 NIEM began as a framework for building and defining messages to facilitate exchanges of information. Part of that framework was a defined process. Part of the framework was a model that formed a base on which exchanges were defined. That base would be both carved down _and_ extended to meet the needs of each exchange. That base existed, and still exists, as a set of XML Schema documents.
 
 As other means of exchanging information have become popular, notably JSON, the community needs have expanded to using NIEM with exchange mechanisms other than XML Schema. JSON is the current alternate means, but many more exist.
@@ -16,7 +13,6 @@ As other means of exchanging information have become popular, notably JSON, the 
 Dealing with this issue, both now and in the future, is the rationale for the Metamodel.
 
 ## Problem/Issue
-
 
 This introduces a problem. How do you translate the model from XML Schema to some form of JSON, when XML Schema and JSON have similar, but definitely different, feature sets? This isn't impossible. We do have a specification and other guidance for this translation, but the translation isn't trivial.
 
@@ -39,7 +35,7 @@ The same concept applies here with models and technologies. Instead of individua
 
 
 
-Modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. This works for simpler things, but complicated real-world concepts require thought to see them while they're embedded in SML Schema
+Modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. This works for simpler things, but complicated real-world concepts require thought to see them while they're embedded in XML Schema
 
 ## Hazards of Embedding
 
@@ -89,13 +85,9 @@ Neutral intermediate format. (Which is the intermediate format? A model instance
 <example>Pull part of Webb's claim example for this.<example/>
 ```
 
-
 - sort of like how NIEM doesn't itself define an exchange; it's a means for you to define an exchange yourself.
 - NIEM is just _one_ possible model
 
-## Why Not Just Use RFD/RDFS?
-
-NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
 
 ## Terminology
 
@@ -148,11 +140,91 @@ Multiple model formats from one "source", e.g.:
 
 Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
 
+## Why Not Just Use RFD/RDFS?
+
+NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
+
+## Why Not Just Use UML?
+
+Expensive proprietary tools. XMI version issues. We want free and open source tooling. Free tooling existing, but those that explicitly support NIEM tend to be the pricey ones.
+
+The NIEM UML profile was complex. [[Jim Cabral]]: Should we even mention the profile?
+
+Just call it "prior efforts"?
+
+Not everyone loves UML. Metamodel will support UML, but doesn't require UML.
+
+
 ## Examples
 
 Not sure how to present them. Maybe both diagrams and text, as we did with JSON normalization?
 
 Should the examples be NIEM? Or should we start with a generic model that's simpler?
+
+```xml
+<xs:complexType name="EmploymentAssociationType">
+	<xs:annotation>
+		<xs:documentation>A data type for an association between an employee and
+		  an employer.</xs:documentation>
+	</xs:annotation>
+	<xs:complexContent>
+		<xs:extension base="nc:AssociationType">
+			<xs:sequence>
+				<xs:element ref="nc:Employee" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="nc:Employer" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="PersonEmploymentAssociation" type="nc:EmploymentAssociationType" nillable="true">
+	<xs:annotation>
+		<xs:documentation>An association between an employee and
+		  an employer.</xs:documentation>
+	</xs:annotation>
+</xs:element>
+```
+
+
+```xml
+<ObjectProperty structures:id="nc.PersonEmploymentAssociation">
+	<Name>PersonEmploymentAssociation</Name>
+	<Namespace structures:ref="nc" xsi:nil="true"/>
+	<DefinitionText>An association between a person and employment
+	  information.</DefinitionText>
+	<Class structures:id="nc.PersonEmploymentAssociationType">
+		<Name>PersonEmploymentAssociationType</Name>
+		<Namespace structures:ref="nc" xsi:nil="true"/>
+		<DefinitionText>A data type for an association between a person and an
+		  employment.</DefinitionText>
+		<ExtensionOf>
+			<Class structures:ref="nc.AssociationType" xsi:nil="true"/>
+			<HasObjectProperty mm:sequenceID="1" mm:minOccursQuantity="1"
+			mm:maxOccursQuantity="1">
+				<ObjectProperty structures:id="nc.Employer">
+					<Name>Employer</Name>
+					<Namespace structures:ref="nc" xsi:nil="true"/>
+					<DefinitionText>A party/entity (organization or person) who
+					  employs a person.</DefinitionText>
+					<Class structures:ref="nc.EntityType" xsi:nil="true"/>
+				</ObjectProperty>
+			</HasObjectProperty>
+			<HasObjectProperty mm:sequenceID="2" mm:minOccursQuantity="1"
+				mm:maxOccursQuantity="1">
+					<ObjectProperty structures:id="nc.Employee">
+						<Name>Employee</Name>
+						<Namespace structures:ref="nc" xsi:nil="true"/>
+						<DefinitionText>A person who works for a business or a
+						  person.</DefinitionText>
+						<Class structures:ref="nc.PersonType" xsi:nil="true"/>
+					</ObjectProperty>
+			</HasObjectProperty>
+		</ExtensionOf>
+		<ContentStyleCode>HasObjectProperty</ContentStyleCode>
+	</Class>
+</ObjectProperty>
+```
+
 
 ## Resources
 

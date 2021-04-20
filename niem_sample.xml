@@ -1,0 +1,21 @@
+<xs:complexType name="EmploymentAssociationType">
+	<xs:annotation>
+		<xs:documentation>A data type for an association between an employee and
+		  an employer.</xs:documentation>
+	</xs:annotation>
+	<xs:complexContent>
+		<xs:extension base="nc:AssociationType">
+			<xs:sequence>
+				<xs:element ref="nc:Employee" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="nc:Employer" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:element name="PersonEmploymentAssociation" type="nc:EmploymentAssociationType" nillable="true">
+	<xs:annotation>
+		<xs:documentation>An association between an employee and
+		  an employer.</xs:documentation>
+	</xs:annotation>
+</xs:element>

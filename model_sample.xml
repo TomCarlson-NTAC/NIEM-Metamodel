@@ -1,0 +1,36 @@
+<ObjectProperty structures:id="nc.PersonEmploymentAssociation">
+	<Name>PersonEmploymentAssociation</Name>
+	<Namespace structures:ref="nc" xsi:nil="true"/>
+	<DefinitionText>An association between a person and employment
+	  information.</DefinitionText>
+	<Class structures:id="nc.PersonEmploymentAssociationType">
+		<Name>PersonEmploymentAssociationType</Name>
+		<Namespace structures:ref="nc" xsi:nil="true"/>
+		<DefinitionText>A data type for an association between a person and an
+		  employment.</DefinitionText>
+		<ExtensionOf>
+			<Class structures:ref="nc.AssociationType" xsi:nil="true"/>
+			<HasObjectProperty mm:sequenceID="1" mm:minOccursQuantity="1"
+			mm:maxOccursQuantity="1">
+				<ObjectProperty structures:id="nc.Employer">
+					<Name>Employer</Name>
+					<Namespace structures:ref="nc" xsi:nil="true"/>
+					<DefinitionText>A party/entity (organization or person) who
+					  employs a person.</DefinitionText>
+					<Class structures:ref="nc.EntityType" xsi:nil="true"/>
+				</ObjectProperty>
+			</HasObjectProperty>
+			<HasObjectProperty mm:sequenceID="2" mm:minOccursQuantity="1"
+				mm:maxOccursQuantity="1">
+					<ObjectProperty structures:id="nc.Employee">
+						<Name>Employee</Name>
+						<Namespace structures:ref="nc" xsi:nil="true"/>
+						<DefinitionText>A person who works for a business or a
+						  person.</DefinitionText>
+						<Class structures:ref="nc.PersonType" xsi:nil="true"/>
+					</ObjectProperty>
+			</HasObjectProperty>
+		</ExtensionOf>
+		<ContentStyleCode>HasObjectProperty</ContentStyleCode>
+	</Class>
+</ObjectProperty>
