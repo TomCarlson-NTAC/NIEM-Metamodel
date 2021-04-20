@@ -14,57 +14,30 @@ Dealing with this issue, both now and in the future, is the rationale for the Me
 
 ## Problem/Issue
 
-This introduces a problem. How do you translate the model from XML Schema to some form of JSON, when XML Schema and JSON have similar, but definitely different, feature sets? This isn't impossible. We do have a specification and other guidance for this translation, but the translation isn't trivial.
+This introduces a problem. How do you translate the model from XML Schema to some form of JSON, when XML Schema and JSON have similar, but definitely different, feature sets? This isn't impossible. We do have a specification and other guidance for this translation, but the translation isn't trivial and the results may not be as satisfying as possible.
 
 The situation is shown below, the dotted line representing the incomplete translation between these two technologies.
 
 ![Two Technologies](two_technologies.svg)
 
-Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF? How accurate is that translation? Does that work get translated to XML Schema via JSON or RDF?
+Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
 
 The "N-squared" diagram is familiar to anyone who has seen many presentations about NIEM. Usually it's representing a variety of entities making an ever growing number peer-to-peer sharing agreements. The same diagram applies here, as a multitude of technologies start requiring peer-to-peer conversions between technologies.
 
 ![N-Squared Technologies](many_technologies.svg)
 
-At the message level, NIEM provides the means to define a single centralized and standardized format for the exchange, replace the complexity of numerous peer-to-peer agreements. Instead of peer-to-peer agreements, everyone implements towards the standard.
+At the message level, NIEM provides the means to define a single centralized and standardized format for the exchange, replacing the complexity of numerous peer-to-peer agreements. Instead of peer-to-peer agreements, everyone implements towards the standard.
 
 The same concept applies here with models and technologies. Instead of individual translations between technologies, there's one centralized and standardized "model instance." Different technologies are translated from that standard model. Now the lines are solid, as each translation can better leverage the abilities of a particular technology.
 
 ![Standardized and Centralized](model_centric.svg)
 
 
-
-
-Modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. This works for simpler things, but complicated real-world concepts require thought to see them while they're embedded in XML Schema
-
-## Hazards of Embedding
-
-**I'm not sure this is appropriate for the primer.**
-
-How do we know something in NIEM is a code table without scouring the NDR for the information? Simply looking at the schemas can be misleading. It looks like code tables are built on the `xs:token` type, but restricted to a selection of specific enumerations.
-
-But relying on the existence of enumerations isn't accurate, as NIEM 5.0 has some code tables that instead are built using patterns and lengths to define codes.
-
-Relying on `xs:token` being the base type is also inaccurate, as there are other elements built on `xs:token` that aren't code tables.
-
-The answer is that the representation term, the end of the element/type name, must end in "Code". Nothing else can be named that way.
-
-There are multiple ways that the schema _could_ define something as a code table, but only one is the actual one true way.
-
-Model examples from which to draw:
-- niem-metamodel-master/example/extension.xml
-
-A model instance built from the metamodel will answer that question more clearly, in the model instance. It looks like this:
-
-```xml
-<request>Does Jim Cabral have a facet example I could put here</request>
-```
-
-Forces technology-to-technology conversions, e.g. XML Schema -> JSON. These can be hard.
+Currently, modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. We use XML Schema to both define NIEM _and_ act as the tool for validating actual messages.
 
 ## Solution
 
-Create the modeling concepts in a conceptual format instead of embedding them in XML Schema:
+The solution is to create the modeling concepts in a conceptual format instead of embedding them in XML Schema. Instead of implying modeling concepts in XML Schema, we explicity
 
 - explicit X has-a Y
 - explicit X is-a Y
@@ -88,78 +61,9 @@ Neutral intermediate format. (Which is the intermediate format? A model instance
 - sort of like how NIEM doesn't itself define an exchange; it's a means for you to define an exchange yourself.
 - NIEM is just _one_ possible model
 
+## What It Looks Like
 
-## Terminology
-
-### Metamodel
-
-The framework itself is the "Metamodel." It's an abstraction of what makes up a model.
-
-### Model Instance
-
-Generically speaking, when you create a model from the metamodel, you get a "model instance." This is a conceptual model reflecting the objects and relationships in a subject area. This does _not_ have to be NIEM. The Metamodel could be used to create a wide variety of different model instances.
-
-### NIEM Model Instance
-
-When you create a specific model, that model instance gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for real-world exchanges, it need to be instantiated into some format.
-
-### NIEM Model Instance XML/JSON
-
-Converting that model to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance XML ([[NMIX]]). If you've converted it to JSON, it's a "NIEM Model Instance JSON ([[NMIJ]])."
-
-Note that a NIEM Model Instance XML ([[NMIX]]) is what we currently call "NIEM." The metamodel abstracts that up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
-
-XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
-
-![Terminology](terminology.svg)
-
-![Terminology (briefer)](terminology_brief.svg)
-
-
-## Benefits
-
-Multiple model formats from one "source", e.g.:
-
-- XML Schema
-- "Simple" XML Schema
-- JSON/JSON-LD
-- SQL
-- CSV
-- UML (via XMI)
-- RDF/OWL
-- [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
-- human readable documentation
-	- Text
-		- HTML
-		- Markdown
-		- RTF
-		- PDF
-	- Diagrams
-		- DOT
-		- Mermaid
-
-Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
-
-## Why Not Just Use RFD/RDFS?
-
-NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
-
-## Why Not Just Use UML?
-
-Expensive proprietary tools. XMI version issues. We want free and open source tooling. Free tooling existing, but those that explicitly support NIEM tend to be the pricey ones.
-
-The NIEM UML profile was complex. [[Jim Cabral]]: Should we even mention the profile?
-
-Just call it "prior efforts"?
-
-Not everyone loves UML. Metamodel will support UML, but doesn't require UML.
-
-
-## Examples
-
-Not sure how to present them. Maybe both diagrams and text, as we did with JSON normalization?
-
-Should the examples be NIEM? Or should we start with a generic model that's simpler?
+Here's a snippet from NIEM, a subset of `nc:PersonEmploymentAssociation` and its type `nc:EmploymentAssociationType`. It defines how a matching XML instances document needs to look, but modeling concepts are implied.
 
 ```xml
 <xs:complexType name="EmploymentAssociationType">
@@ -185,6 +89,7 @@ Should the examples be NIEM? Or should we start with a generic model that's simp
 </xs:element>
 ```
 
+Here's the matching snippet from a NIEM Model Instance subset. While it's longer, that's because it details the different objects in modeling terms. Note that it isn't XML _Schema_. It's not designed as a tool for validating exchanges. It's plain XML and only defines the Model Instance. To use as a tool for validation, you would convert this to the technology you'll be using, be it XML Schema, JSON, RDF, UML, or whatever.
 
 ```xml
 <ObjectProperty structures:id="nc.PersonEmploymentAssociation">
@@ -225,8 +130,69 @@ Should the examples be NIEM? Or should we start with a generic model that's simp
 </ObjectProperty>
 ```
 
+## Terminology
+
+There are several levels to these concepts and past terminology hasn't clearly delineated them.
+
+### Metamodel
+
+The framework itself is the "Metamodel." It's an abstraction of what makes up a model. It's not NIEM-specific. We use it to define NIEM, but you could use it to define any number of other models. There is no "NIEM Metamodel."
+
+The Metamodel is a crucial tool for creating and maintaining models, but is not something an ordinary NIEM user would usually care about.
+
+### Model Instance
+
+Generically speaking, when you create a model from the metamodel, you get a "model instance." This is a conceptual model reflecting the objects and relationships in a subject area. This does _not_ have to be NIEM. The Metamodel could be used to create a wide variety of different model instances.
+
+### NIEM Model Instance
+
+When you create a specific model, that model instance name gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for validating real-world exchanges, it would need to be instantiated into some format.
+
+### NIEM Model Instance XML/JSON
+
+Converting that model to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance XML ([[NMIX]]). If you've converted it to JSON Schema, it's a "NIEM Model Instance JSON ([[NMIJ]])."
+
+Note that a NIEM Model Instance XML ([[NMIX]]) is what we currently call "NIEM." The NIEM Model Instance abstracts that up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
+
+XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
+
+![Terminology](terminology.svg)
+
+## Benefits
+
+The major benefit is enabling the use of multiple model instance formats from one "source", e.g.:
+
+- XML Schema
+- JSON/JSON-LD
+- SQL
+- UML (via XMI)
+- RDF/OWL
+- [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
+- Human readable documentation
+	- Text (HTML, Markdown, RTF, PDF, CSV, etc.)
+	- Diagrams
+
+Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
+
+**Add additional benefits from [[Metamodel Notes from 2020-08-25]]**
+
+## Why Not Just Use RFD/RDFS?
+
+NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
+
+A key benefit of the Metamodel is the the NIEM Model Instance can be readily converted to RDF.
+
+## Why Not Just Use UML?
+
+Prior efforts defining NIEM in UML were complex and costly. While free and open source tools for using UML exist, those that explicitly supported NIEM were expensive and proprietary.
+
+Additionally, UML tools use XMI as a format for exchanging diagrams, but implementation of XMI across tools and versions isn't as stable and reliable as needed.
+
+A key benefit of the Metamodel is the the NIEM Model Instance can be readily converted to UML/XMI.
 
 ## Resources
+
+**These are for my benefit right now. They may not be in the final draft.**
 
 - [webb](https://github.com/webb)/[niem-metamodel](https://github.com/webb/niem-metamodel)
 	- [iamdrscott](https://github.com/iamdrscott)/[niem-metamodel](https://github.com/iamdrscott/niem-metamodel)
