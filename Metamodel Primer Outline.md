@@ -195,20 +195,20 @@ A key benefit of the Metamodel is the the NIEM Model Instance can be readily con
 
 ___
 
-<a name="json_fn">1</a>. [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
-<a name="rdf_fn">2</a>. [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
-<a name="json-ld_fn">3</a>. JSON-LD
-<a name="sql_fn">4</a>. Structured Query Language
-<a name="uml_fn">5</a>. UML
-<a name="xmi_fn">6</a>. XMI
-<a name="owl_fn">7</a>. [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
-<a name="openapi_fn">8</a>. [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
-<a name="protobuf_fn">9</a>. [Protocol Buffer](https://en.wikipedia.org/wiki/Protocol_Buffers)
-<a name="html_fn">10</a>. [HyperText Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
-<a name="markdown_fn">11</a>. [Markdown](https://en.wikipedia.org/wiki/Markdown)
-<a name="docx_fn">12</a>. [Office Open XML (DOCX)](https://en.wikipedia.org/wiki/Office_Open_XML)
-<a name="rtf_fn">13</a>. [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)
-<a name="pdf_fn">14</a>. PDF
-<a name="csv_fn">15</a>. CSV
-<a name="dot_fn">16</a>. [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
-<a name="rdfs_fn">17</a>. [RDF Schema (Resource Description Framework Schema)](https://en.wikipedia.org/wiki/RDF_Schema)
+- <a name="json_fn">1</a>. [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
+- <a name="rdf_fn">2</a>. [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
+- <a name="json-ld_fn">3</a>. [JavaScript Object Notation for Linked Data (JSON-LD)](https://en.wikipedia.org/wiki/JSON-LD)
+- <a name="sql_fn">4</a>. [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL)
+- <a name="uml_fn">5</a>. [Unified Modeling Language (UML)](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
+- <a name="xmi_fn">6</a>. [XML Metadata Interchange (XMI)](https://en.wikipedia.org/wiki/XML_Metadata_Interchange)
+- <a name="owl_fn">7</a>. [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
+- <a name="openapi_fn">8</a>. [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
+- <a name="protobuf_fn">9</a>. [Protocol Buffer](https://en.wikipedia.org/wiki/Protocol_Buffers)
+- <a name="html_fn">10</a>. [HyperText Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
+- <a name="markdown_fn">11</a>. [Markdown](https://en.wikipedia.org/wiki/Markdown)
+- <a name="docx_fn">12</a>. [Office Open XML (DOCX)](https://en.wikipedia.org/wiki/Office_Open_XML)
+- <a name="rtf_fn">13</a>. [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)
+- <a name="pdf_fn">14</a>. [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF)
+- <a name="csv_fn">15</a>. [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values)
+- <a name="dot_fn">16</a>. [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
+- <a name="rdfs_fn">17</a>. [RDF Schema (Resource Description Framework Schema)](https://en.wikipedia.org/wiki/RDF_Schema)
