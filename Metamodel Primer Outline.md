@@ -10,7 +10,7 @@ Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 NIEM began as a framework for building and defining messages to facilitate exchanges of information. Part of that framework was a defined process. Part of the framework was a model that formed a base on which exchanges were defined. That base would be both carved down _and_ extended to meet the needs of each exchange. That base existed, and still exists, as a set of XML Schema documents.
 
-As other means of exchanging information have become popular, notably JSON[^json_fn], the community needs have expanded to using NIEM with exchange mechanisms other than XML Schema. JSON is the current alternate means, but many more exist.
+As other means of exchanging information have become popular, notably JSON<sup>[1](#json_fn)</sup>, the community needs have expanded to using NIEM with exchange mechanisms other than XML Schema. JSON is the current alternate means, but many more exist.
 
 Dealing with this issue, both now and in the future, is the rationale for the Metamodel.
 
@@ -220,3 +220,5 @@ A key benefit of the Metamodel is the the NIEM Model Instance can be readily con
 [^csv_fn]: CSV
 
 [^dot_fn]: [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
+
+<a name="json_fn">1</a>. [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
