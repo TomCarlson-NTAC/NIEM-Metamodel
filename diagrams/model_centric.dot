@@ -1,0 +1,35 @@
+graph modelmeans {
+
+	// layouts
+    // circo
+    // dot
+    // fdp
+    // neato
+    // osage
+    // patchwork
+    // sfdp
+    // twopi
+
+	layout="circo";
+
+	niem[label="NIEM\nModel\nInstance"];
+	
+	xml[label="XML"];
+	uml[label="UML"];
+	json[label="JSON"];
+	
+	rdf[label="RDF"];
+	dot[label="SVG"];
+	
+	sql[label="SQL"];
+
+
+	niem -- xml;
+	niem -- uml;
+	niem -- json;
+	niem -- rdf;
+	niem -- dot;
+	niem -- sql;
+
+
+}

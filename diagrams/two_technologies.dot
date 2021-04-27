@@ -1,0 +1,11 @@
+graph means {
+
+	layout="circo";
+	
+	xml[label="XML Schema"];
+	json[label="JSON-LD"];
+	
+	xml -- json[style="dotted"];
+
+
+}

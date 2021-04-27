@@ -1,0 +1,34 @@
+graph lotsameans {
+
+	layout="circo";
+	
+	xml[label="XML"];
+	uml[label="UML"];
+	json[label="JSON"];
+	
+	rdf[label="RDF"];
+	dot[label="SVG"];
+	
+	sql[label="SQL"];
+	
+	xml -- uml[style="dotted"];
+	xml -- json[style="dotted"];
+	xml -- rdf[style="dotted"];
+	xml -- dot[style="dotted"];
+	xml -- sql[style="dotted"];
+
+	uml -- json[style="dotted"];
+	uml -- rdf[style="dotted"];
+	uml -- dot[style="dotted"];
+	uml -- sql[style="dotted"];
+	
+	json -- rdf[style="dotted"];
+	json -- dot[style="dotted"];
+	json -- sql[style="dotted"];
+	
+	rdf -- dot[style="dotted"];
+	rdf -- sql[style="dotted"];
+	
+	dot -- sql[style="dotted"];
+
+}
