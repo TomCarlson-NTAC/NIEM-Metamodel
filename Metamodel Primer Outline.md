@@ -1,4 +1,4 @@
-# Model Primer Outline
+# Introduction to NIEM Model Instances
 
 ## Background: How We Got Here
 
@@ -43,7 +43,6 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 - NIEM: Defines real world things
 - Metamodel: Defines modeling concepts
 
-
 ## What It Looks Like
 
 Here's a snippet from NIEM, a subset of `nc:PersonEmploymentAssociation` and its type `nc:EmploymentAssociationType`. It defines how a matching XML instances document needs to look, but modeling concepts are implied.
@@ -72,7 +71,7 @@ Here's a snippet from NIEM, a subset of `nc:PersonEmploymentAssociation` and its
 </xs:element>
 ```
 
-Here's the matching snippet from a NIEM Model Instance subset. While it's longer, that's because it details the different objects in modeling terms. Note that it isn't XML _Schema_. It's not designed as a tool for validating exchanges. It's plain XML and only defines the Model Instance. To use as a tool for validation, you would convert this to the technology you'll be using, be it XML Schema, JSON, RDF, UML, or whatever.
+Here's the matching snippet from a NIEM Model Instance subset. While it's longer, that's because it details the different objects in modeling terms. Note that it isn't XML _Schema_. It's not designed as a tool for validating exchanges. It's plain XML and only defines the Model Instance. To use as a tool for validation, you would convert this to the technology you'll be using, be it XML Schema, JSON, RDF, UML<sup>[3](#uml_fn)</sup>, or whatever.
 
 ```xml
 <ObjectProperty structures:id="nc.PersonEmploymentAssociation">
@@ -152,9 +151,9 @@ While creating platform dependent versions of NIEM for validation purposes is a 
 The major benefit is enabling the use of multiple model instance formats and views from one "source." The NIEM Model Instance could be transformed into any of these example formats:
 
 - XML Schema
-- JSON/JSON-LD<sup>[3](#json-ld_fn)</sup>
-- SQL<sup>[4](#sql_fn)</sup>
-- UML<sup>[5](#uml_fn)</sup> (via XMI<sup>[6](#xmi_fn)</sup>)
+- JSON/JSON-LD<sup>[4](#json-ld_fn)</sup>
+- SQL<sup>[5](#sql_fn)</sup>
+- UML (via XMI<sup>[6](#xmi_fn)</sup>)
 - RDF/OWL<sup>[7](#owl_fn)</sup>
 - OpenAPI<sup>[8](#openapi_fn)</sup>
 - Protobuf<sup>[9](#protobuf_fn)</sup>
@@ -168,23 +167,23 @@ Using a NIEM Model Instance, you no longer need separate tool suites for each fo
 
 NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
 
-A key benefit of the Metamodel is the the NIEM Model Instance can be readily converted to RDF.
+A key benefit of the Metamodel is that the NIEM Model Instance can be readily converted to RDF.
 
 ## Why Not Just Use UML?
 
-Prior efforts defining NIEM in UML were complex and costly. While free and open source tools for using UML exist, those that explicitly supported NIEM were expensive and proprietary.
+Prior efforts at defining NIEM in UML were complex and costly. While free and open source tools for using UML exist, those that explicitly supported NIEM were expensive and proprietary.
 
 Additionally, UML tools use XMI as a format for exchanging diagrams, but implementation of XMI across tools and versions isn't as stable and reliable as needed.
 
-A key benefit of the Metamodel is the the NIEM Model Instance can be readily converted to UML/XMI.
+A key benefit of the Metamodel is that the NIEM Model Instance can be readily converted to UML/XMI.
 
 ___
 
 - <a name="json_fn">1</a>. [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
 - <a name="rdf_fn">2</a>. [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
-- <a name="json-ld_fn">3</a>. [JavaScript Object Notation for Linked Data (JSON-LD)](https://en.wikipedia.org/wiki/JSON-LD)
-- <a name="sql_fn">4</a>. [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL)
-- <a name="uml_fn">5</a>. [Unified Modeling Language (UML)](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
+- <a name="uml_fn">3</a>. [Unified Modeling Language (UML)](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
+- <a name="json-ld_fn">4</a>. [JavaScript Object Notation for Linked Data (JSON-LD)](https://en.wikipedia.org/wiki/JSON-LD)
+- <a name="sql_fn">5</a>. [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL)
 - <a name="xmi_fn">6</a>. [XML Metadata Interchange (XMI)](https://en.wikipedia.org/wiki/XML_Metadata_Interchange)
 - <a name="owl_fn">7</a>. [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
 - <a name="openapi_fn">8</a>. [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
