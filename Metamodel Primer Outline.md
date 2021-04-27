@@ -1,11 +1,5 @@
 # Model Primer Outline
 
-**Primer needs to be standalone, but linked to other materials.**
-
-**Should we tie in the standards with a line or two?**
-
-Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
-
 ## Background: How We Got Here
 
 NIEM began as a framework for building and defining messages to facilitate exchanges of information. Part of that framework was a defined process. Part of the framework was a model that formed a base on which exchanges were defined. That base would be both carved down _and_ extended to meet the needs of each exchange. That base existed, and still exists, as a set of XML Schema documents.
@@ -34,7 +28,6 @@ The same concept applies here with models and technologies. Instead of individua
 
 ![Standardized and Centralized](model_centric.svg)
 
-
 Currently, modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. We use XML Schema to both define NIEM _and_ act as the tool for validating actual messages.
 
 ## Solution
@@ -45,17 +38,11 @@ Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and M
 
 ## How It Works
 
-"Metamodel" is a framework for building models. The metamodel itself isn't the NIEM model. It's a "neutral modeling formalism," for these models. It's a means of defining a model. It provides the means to define a model, as compared to NIEM which is a means for defining real world objects:
+"Metamodel" is a framework for building models. The metamodel itself isn't the NIEM model. It's a "neutral modeling formalism" for defining models. It provides the means to define a model, as compared to NIEM which is a means for defining real world objects:
 
 - NIEM: Defines real world things
 - Metamodel: Defines modeling concepts
 
-**Clean this up**
-
-Neutral intermediate format. (Which is the intermediate format? A model instance.) Platform independent?
-
-- sort of like how NIEM doesn't itself define an exchange; it's a means for you to define an exchange yourself.
-- NIEM is just _one_ possible model
 
 ## What It Looks Like
 
@@ -142,7 +129,7 @@ Generically speaking, when you create a model from the Metamodel, you get a "mod
 
 ### NIEM Model Instance
 
-When you create a specific model, that name for that model instance gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for validating real-world exchanges, it would need to be instantiated into some format.
+When you create a specific model, that name for that model instance gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance (NMI)." This is still a conceptual model. To use it for validating real-world exchanges, it would need to be instantiated into some format.
 
 Up until this point, the Metamodel and Model Instances are mainly behind-the-scenes tools. What community members eventually need are versions of NIEM they can use to define exchanges and to which they can implement. The NIEM Model Instance is what a user would use to define an exchange, in terms of creating both subsets and new content. It's what would underlie the tooling. It's the platform _independent_ version of NIEM.
 
@@ -150,9 +137,9 @@ To actually implement an exchange, platform _dependent_ versions are needed.
 
 ### NIEM Model Instance XML/JSON
 
-Transforming the NIEM Model Instance to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance in XML ([[NMIX]]). If you've converted it to JSON Schema, it's a "NIEM Model Instance in JSON ([[NMIJ]])."
+Transforming the NIEM Model Instance to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance in XML (NMIX). If you've converted it to JSON Schema, it's a "NIEM Model Instance in JSON (NMIJ)."
 
-Note that a NIEM Model Instance in XML ([[NMIX]]) is what we currently call "NIEM." The NIEM Model Instance abstracts NIEM up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
+Note that a NIEM Model Instance in XML (NMIX) is what we currently call "NIEM." The NIEM Model Instance abstracts NIEM up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
 
 XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
 
@@ -175,9 +162,7 @@ The major benefit is enabling the use of multiple model instance formats and vie
 	- Text (HTML<sup>[10](#html_fn)</sup>, Markdown<sup>[11](#markdown_fn)</sup>, DOCX<sup>[12](#docx_fn)</sup>, RTF<sup>[13](#rtf_fn)</sup>, PDF<sup>[14](#pdf_fn)</sup>, CSV<sup>[15](#csv_fn)</sup>, etc.)
 	- Diagrams (Graphviz/DOT<sup>[16](#dot_fn)</sup>)
 
-Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
-
-**Add additional benefits from [[Metamodel Notes from 2020-08-25]]**
+Using a NIEM Model Instance, you no longer need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites. Development of those converters can be spread out over the community, leveraging expertise in each technology.
 
 ## Why Not Just Use RFD/RDFS<sup>[17](#rdfs_fn)</sup>?
 
