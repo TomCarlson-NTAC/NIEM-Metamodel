@@ -10,7 +10,7 @@ Post here: https://github.com/NIEM/NIEM-Modeling-Formalism
 
 NIEM began as a framework for building and defining messages to facilitate exchanges of information. Part of that framework was a defined process. Part of the framework was a model that formed a base on which exchanges were defined. That base would be both carved down _and_ extended to meet the needs of each exchange. That base existed, and still exists, as a set of XML Schema documents.
 
-As other means of exchanging information have become popular, notably JSON, the community needs have expanded to using NIEM with exchange mechanisms other than XML Schema. JSON is the current alternate means, but many more exist.
+As other means of exchanging information have become popular, notably JSON[^json_fn], the community needs have expanded to using NIEM with exchange mechanisms other than XML Schema. JSON is the current alternate means, but many more exist.
 
 Dealing with this issue, both now and in the future, is the rationale for the Metamodel.
 
@@ -22,7 +22,7 @@ The situation is shown below, the dotted line representing the incomplete transl
 
 ![Two Technologies](two_technologies.svg)
 
-Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
+Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF[^rdf_fn]? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
 
 The "N-squared" diagram is familiar to anyone who has seen many presentations about NIEM. Usually it's representing a variety of entities making an ever growing number peer-to-peer sharing agreements. The same diagram applies here, as a multitude of technologies start requiring peer-to-peer conversions between technologies.
 
@@ -138,46 +138,48 @@ The Metamodel is a crucial tool for creating and maintaining models, but is not 
 
 ### Model Instance
 
-Generically speaking, when you create a model from the metamodel, you get a "model instance." This is a conceptual model reflecting the objects and relationships in a subject area. This does _not_ have to be NIEM. The Metamodel could be used to create a wide variety of different model instances.
+Generically speaking, when you create a model from the Metamodel, you get a "model instance." This is a conceptual model reflecting the objects and relationships in a subject area. This does _not_ have to be NIEM. The Metamodel could be used to create a wide variety of different Model Instances. Of course, our main interest is in NIEM so we want to create a Model Instance reflecting NIEM.
 
 ### NIEM Model Instance
 
-When you create a specific model, that model instance name gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for validating real-world exchanges, it would need to be instantiated into some format.
+When you create a specific model, that name for that model instance gets a prefix determined by what specific model you've created. If you create NIEM as a model, that's a "NIEM Model Instance ([[NMI]])." This is still a conceptual model. To use it for validating real-world exchanges, it would need to be instantiated into some format.
 
-**THis is where normal users get involved**
+Up until this point, the Metamodel and Model Instances are mainly behind-the-scenes tools. What community members eventually need are versions of NIEM they can use to define exchanges and to which they can implement. The NIEM Model Instance is what a user would use to define an exchange, in terms of creating both subsets and new content. It's what would underlie the tooling. It's the platform _independent_ version of NIEM.
+
+To actually implement an exchange, platform _dependent_ versions are needed.
 
 ### NIEM Model Instance XML/JSON
 
-Converting that model to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance XML ([[NMIX]]). If you've converted it to JSON Schema, it's a "NIEM Model Instance JSON ([[NMIJ]])."
+Transforming the NIEM Model Instance to a representation in a particular technology adds the technology as a suffix. If you've converted the NIEM Model Instance to XML Schema, then you have a NIEM Model Instance in XML ([[NMIX]]). If you've converted it to JSON Schema, it's a "NIEM Model Instance in JSON ([[NMIJ]])."
 
-Note that a NIEM Model Instance XML ([[NMIX]]) is what we currently call "NIEM." The NIEM Model Instance abstracts that up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
+Note that a NIEM Model Instance in XML ([[NMIX]]) is what we currently call "NIEM." The NIEM Model Instance abstracts NIEM up a level, in order to separate the modeling concepts from the specific technology of XML Schema.
 
 XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
 
 ![Terminology](terminology.svg)
 
-**Add "instance views" as a concept**
+While creating platform dependent versions of NIEM for validation purposes is a major outcome of the Metamodel and NIEM Model Instance, some instances may have entirely different purposes, often as a means of viewing a model.
 
 ## Benefits
 
-The major benefit is enabling the use of multiple model instance formats and views from one "source", e.g.:
+The major benefit is enabling the use of multiple model instance formats and views from one "source." The NIEM Model Instance could be transformed into any of these example formats:
 
 - XML Schema
-- JSON/JSON-LD
-- SQL
-- UML (via XMI)
-- RDF/OWL
-- [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
-- Protobuff **Goog protocol buffer**
+- JSON/JSON-LD[^json-ld_fn]
+- SQL[^sql_fn]
+- UML[^uml_fn] (via XMI[^xmi_fn])
+- RDF/OWL[^owl_fn]
+- OpenAPI[^openapi_fn]
+- Protobuf[^protobuf_fn]
 - Human readable documentation
-	- Text (HTML, Markdown, RTF, PDF, CSV, etc.)
-	- Diagrams (Graphviz/DOT, Mermaid)
+	- Text (HTML[^html_fn], Markdown[^markdown_fn], DOCX[^docx_fn], RTF[^rtf_fn], PDF[^pdf_fn], CSV[^csv_fn], etc.)
+	- Diagrams (Graphviz/DOT[^dot_fn], Mermaid)
 
 Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
 
 **Add additional benefits from [[Metamodel Notes from 2020-08-25]]**
 
-## Why Not Just Use RFD/RDFS?
+## Why Not Just Use RFD/RDFS[^rdfs_fn]?
 
 NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
 
@@ -199,3 +201,22 @@ A key benefit of the Metamodel is the the NIEM Model Instance can be readily con
 	- [iamdrscott](https://github.com/iamdrscott)/[niem-metamodel](https://github.com/iamdrscott/niem-metamodel)
 - [cabralje](https://github.com/cabralje)/[niem-tools](https://github.com/cabralje/niem-tools)
 
+[^protobuf_fn]: [Protocol Buffer](https://en.wikipedia.org/wiki/Protocol_Buffers)
+[^sql_fn]: Structured Query Language
+[^json_fn]: JSON
+[^json-ld_fn]: JSON-LD
+[^uml_fn]: UML
+[^xmi_fn]: XMI
+[^rdf_fn]: [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
+[^rdfs_fn]: [RDF Schema (Resource Description Framework Schema)](https://en.wikipedia.org/wiki/RDF_Schema)
+[^owl_fn]: [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
+[^openapi_fn]:[OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
+
+[^html_fn]: [HyperText Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
+[^markdown_fn]: [Markdown](https://en.wikipedia.org/wiki/Markdown)
+[^rtf_fn]: [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)
+[^docx_fn]: [Office Open XML (DOCX)](https://en.wikipedia.org/wiki/Office_Open_XML)
+[^pdf_fn]: PDF
+[^csv_fn]: CSV
+
+[^dot_fn]: [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
