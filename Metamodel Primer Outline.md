@@ -22,7 +22,7 @@ The situation is shown below, the dotted line representing the incomplete transl
 
 ![Two Technologies](two_technologies.svg)
 
-Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF[^rdf_fn]? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
+Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF<sup>[2](#rdf_fn)</sup>? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
 
 The "N-squared" diagram is familiar to anyone who has seen many presentations about NIEM. Usually it's representing a variety of entities making an ever growing number peer-to-peer sharing agreements. The same diagram applies here, as a multitude of technologies start requiring peer-to-peer conversions between technologies.
 
@@ -165,21 +165,21 @@ While creating platform dependent versions of NIEM for validation purposes is a 
 The major benefit is enabling the use of multiple model instance formats and views from one "source." The NIEM Model Instance could be transformed into any of these example formats:
 
 - XML Schema
-- JSON/JSON-LD[^json-ld_fn]
-- SQL[^sql_fn]
-- UML[^uml_fn] (via XMI[^xmi_fn])
-- RDF/OWL[^owl_fn]
-- OpenAPI[^openapi_fn]
-- Protobuf[^protobuf_fn]
+- JSON/JSON-LD<sup>[3](#json-ld_fn)</sup>
+- SQL<sup>[4](#sql_fn)</sup>
+- UML<sup>[5](#uml_fn)</sup> (via XMI<sup>[6](#xmi_fn)</sup>)
+- RDF/OWL<sup>[7](#owl_fn)</sup>
+- OpenAPI<sup>[8](#openapi_fn)</sup>
+- Protobuf<sup>[9](#protobuf_fn)</sup>
 - Human readable documentation
-	- Text (HTML[^html_fn], Markdown[^markdown_fn], DOCX[^docx_fn], RTF[^rtf_fn], PDF[^pdf_fn], CSV[^csv_fn], etc.)
-	- Diagrams (Graphviz/DOT[^dot_fn], Mermaid)
+	- Text (HTML<sup>[10](#html_fn)</sup>, Markdown<sup>[11](#markdown_fn)</sup>, DOCX<sup>[12](#docx_fn)</sup>, RTF<sup>[13](#rtf_fn)</sup>, PDF<sup>[14](#pdf_fn)</sup>, CSV<sup>[15](#csv_fn)</sup>, etc.)
+	- Diagrams (Graphviz/DOT<sup>[16](#dot_fn)</sup>)
 
 Don't need separate tool suites for each format, e.g. SSGT and Movement. Instead, you can have one tool suite that deals with models, and converters for different technologies. Converters are easier to write than tool suites.
 
 **Add additional benefits from [[Metamodel Notes from 2020-08-25]]**
 
-## Why Not Just Use RFD/RDFS[^rdfs_fn]?
+## Why Not Just Use RFD/RDFS<sup>[17](#rdfs_fn)</sup>?
 
 NIEM models have details that aren't easily captured in RDF. Concepts like cardinality and field typing are crucial to information exchanges yet are not easily represented in RDF.
 
@@ -193,32 +193,22 @@ Additionally, UML tools use XMI as a format for exchanging diagrams, but impleme
 
 A key benefit of the Metamodel is the the NIEM Model Instance can be readily converted to UML/XMI.
 
-## Resources
-
-**These are for my benefit right now. They may not be in the final draft.**
-
-- [webb](https://github.com/webb)/[niem-metamodel](https://github.com/webb/niem-metamodel)
-	- [iamdrscott](https://github.com/iamdrscott)/[niem-metamodel](https://github.com/iamdrscott/niem-metamodel)
-- [cabralje](https://github.com/cabralje)/[niem-tools](https://github.com/cabralje/niem-tools)
-
-[^protobuf_fn]: [Protocol Buffer](https://en.wikipedia.org/wiki/Protocol_Buffers)
-[^sql_fn]: Structured Query Language
-[^json_fn]: JSON
-[^json-ld_fn]: JSON-LD
-[^uml_fn]: UML
-[^xmi_fn]: XMI
-[^rdf_fn]: [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
-[^rdfs_fn]: [RDF Schema (Resource Description Framework Schema)](https://en.wikipedia.org/wiki/RDF_Schema)
-[^owl_fn]: [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
-[^openapi_fn]:[OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
-
-[^html_fn]: [HyperText Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
-[^markdown_fn]: [Markdown](https://en.wikipedia.org/wiki/Markdown)
-[^rtf_fn]: [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)
-[^docx_fn]: [Office Open XML (DOCX)](https://en.wikipedia.org/wiki/Office_Open_XML)
-[^pdf_fn]: PDF
-[^csv_fn]: CSV
-
-[^dot_fn]: [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
+___
 
 <a name="json_fn">1</a>. [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
+<a name="rdf_fn">2</a>. [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework)
+<a name="json-ld_fn">3</a>. JSON-LD
+<a name="sql_fn">4</a>. Structured Query Language
+<a name="uml_fn">5</a>. UML
+<a name="xmi_fn">6</a>. XMI
+<a name="owl_fn">7</a>. [Web Ontology Language (OWL)](https://en.wikipedia.org/wiki/Web_Ontology_Language)
+<a name="openapi_fn">8</a>. [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification)
+<a name="protobuf_fn">9</a>. [Protocol Buffer](https://en.wikipedia.org/wiki/Protocol_Buffers)
+<a name="html_fn">10</a>. [HyperText Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
+<a name="markdown_fn">11</a>. [Markdown](https://en.wikipedia.org/wiki/Markdown)
+<a name="docx_fn">12</a>. [Office Open XML (DOCX)](https://en.wikipedia.org/wiki/Office_Open_XML)
+<a name="rtf_fn">13</a>. [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)
+<a name="pdf_fn">14</a>. PDF
+<a name="csv_fn">15</a>. CSV
+<a name="dot_fn">16</a>. [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
+<a name="rdfs_fn">17</a>. [RDF Schema (Resource Description Framework Schema)](https://en.wikipedia.org/wiki/RDF_Schema)
