@@ -14,19 +14,19 @@ This introduces a problem. How do you translate the model from XML Schema to som
 
 The situation is shown below, the dotted line representing the incomplete translation between these two technologies.
 
-![Two Technologies](diagrams/two_technologies.svg)
+![Two Technologies](diagrams/two_technologies.png)
 
 Still, this conversion is manageable. When more technologies get added, the translations get out of hand, especially as the community does work in these other technologies. How does work done in JSON get translated to RDF<sup>[2](#rdf_fn)</sup>? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
 
 The "N-squared" diagram is familiar to anyone who has seen many presentations about NIEM. Usually it's representing a variety of entities making an ever growing number peer-to-peer sharing agreements. The same diagram applies here, as a multitude of technologies start requiring peer-to-peer conversions between technologies.
 
-![N-Squared Technologies](diagrams/many_technologies.svg)
+![N-Squared Technologies](diagrams/many_technologies.png)
 
 At the message level, NIEM provides the means to define a single centralized and standardized format for the exchange, replacing the complexity of numerous peer-to-peer agreements. Instead of peer-to-peer agreements, everyone implements towards the standard.
 
 The same concept applies here with models and technologies. Instead of individual translations between technologies, there's one centralized and standardized "model instance." Different technologies are translated from that standard model. Now the lines are solid, as each translation can better leverage the abilities of a particular technology.
 
-![Standardized and Centralized](diagrams/model_centric.svg)
+![Standardized and Centralized](diagrams/model_centric.png)
 
 Currently, modeling concepts are embedded in a specific technology, XML Schema. We overload XML Schema concepts to include real-world concepts. We use XML Schema to both define NIEM _and_ act as the tool for validating actual messages.
 
@@ -34,7 +34,7 @@ Currently, modeling concepts are embedded in a specific technology, XML Schema. 
 
 The solution is to create the modeling concepts in a conceptual format instead of embedding them in XML Schema. Instead of implying modeling concepts in XML Schema, we explicitly define them in a Model Instance.
 
-Allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and Model -> JSON. This is easier.
+This allows for **concept**-to-technology conversions, e.g. Model -> XML Schema and Model -> JSON. This is easier and more accurate than technology-to-technology conversions, e.g. XML Schema -> JSON.
 
 ## How It Works
 
@@ -142,7 +142,7 @@ Note that a NIEM Model Instance in XML (NMIX) is what we currently call "NIEM." 
 
 XML and JSON aren't the only targets for this conversion/rendering, but are the starting point for the effort.
 
-![Terminology](diagrams/terminology.svg)
+![Terminology](diagrams/terminology.png)
 
 While creating platform dependent versions of NIEM for validation purposes is a major outcome of the Metamodel and NIEM Model Instance, some instances may have entirely different purposes, often as a means of viewing a model.
 
