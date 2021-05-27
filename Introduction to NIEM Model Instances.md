@@ -1,5 +1,11 @@
 # Introduction to NIEM Model Instances
 
+## Abstract
+
+The "Metamodel" is a framework which expands the reach of NIEM into additional technologies beyond XML Schema. By separating modeling concepts from XML Schema, the Metamodel defines NIEM in a platform independent and agnostic format as a "NIEM Model Instance." This instance can then be transformed into specific technologies, negating the need to directly convert between disparate technologies and avoiding a resulting loss of functionality.
+
+This platform independent and agnostic format will enable NIEM use in a variety of technologies, starting with XML Schema and JSON, and later including RDF and UML. It will enable a unified tool suite with converters for other technologies. It frees NIEM from the limitations of XML Schema. It provides an avenue for the community to transform NIEM into other needed technologies.
+
 ## Background: How We Got Here
 
 NIEM began as a framework for building and defining messages to facilitate exchanges of information. One part of the framework was a defined process for these message. Another part of the framework was a model that formed the basis on which exchanges were defined. The base would be both carved down _and_ extended to meet the needs of each exchange. This base exists as a set of XML Schema documents.
@@ -10,13 +16,13 @@ Dealing with this issue, both now and in the future, is the rationale for the Me
 
 ## Problem/Issue
 
-This introduces a problem. How do you translate the model from XML Schema to some form of JSON, when XML Schema and JSON have similar, but definitely different, feature sets? We have a specification and other guidance for this translation, but the translation isn't trivial and the results may not be satisfying.
+This introduces a problem. How do you transform the model from XML Schema into some form of JSON, when XML Schema and JSON have similar, but definitely different, feature sets? We have a specification and other guidance for this transformation, but the process isn't trivial and the results may not be satisfying.
 
-The situation is shown below, the dotted line representing the incomplete translation between these two technologies.
+The situation is shown below, the dotted line representing the incomplete transformation between these two technologies.
 
 ![Two Technologies](diagrams/two_technologies.png)
 
-Still, the XML Schema to JSON conversion is manageable. As more technologies are added, the translations become unwieldy. Looking forward, this becomes more problematic as the community does work in other technologies. How does work done in JSON get translated to RDF<sup>[2](#rdf_fn)</sup>? How accurate is that translation? Does that work get translated to XML Schema via JSON directly or via RDF?
+Still, the XML Schema to JSON transformation is manageable. As more technologies are added, the transformations become unwieldy. Looking forward, this becomes more problematic as the community does work in other technologies. How does work done in JSON get transformed into RDF<sup>[2](#rdf_fn)</sup>? How accurate is that transformation? Does that work get transformed into XML Schema first and _then_ into RDF, or directly into RDF?
 
 The "N-squared" diagram is familiar to anyone who has seen many presentations about NIEM. Usually it's representing a variety of entities making an ever growing number peer-to-peer sharing agreements. The same diagram applies here, as a multitude of technologies start requiring peer-to-peer conversions between technologies.
 
@@ -24,7 +30,7 @@ The "N-squared" diagram is familiar to anyone who has seen many presentations ab
 
 At the message level, NIEM provides the means to define a single centralized and standardized format for the exchange, replacing the complexity of numerous peer-to-peer agreements. Everyone implements towards the standard instead of peer-to-peer agreements.
 
-This same concept applies with models and technologies. There is one centralized and standardized "model instance" rather than individual translations between technologies. Different technologies are translated from the standard model. The lines are solid, as each translation is better able to leverage the abilities of a particular technology.
+This same concept applies with models and technologies. There is one centralized and standardized "model instance" rather than individual transformations between technologies. Different technologies are transformed from the standard model. The lines are solid, as each transformation is better able to leverage the abilities of a particular technology.
 
 ![Standardized and Centralized](diagrams/model_centric.png)
 
@@ -138,7 +144,7 @@ To actually implement an exchange, platform _dependent_ versions are needed.
 
 ### NIEM Model Instance XML/JSON
 
-Transforming the NIEM Model Instance to a representation in a particular technology adds the technology as a suffix. If a NIEM Model Instance is converted to XML Schema, it becomes a "NIEM Model Instance in XML (NMIX)". If converted to JSON Schema, it's a "NIEM Model Instance in JSON (NMIJ)."
+Transforming the NIEM Model Instance into a representation in a particular technology adds the technology as a suffix. If a NIEM Model Instance is converted to XML Schema, it becomes a "NIEM Model Instance in XML (NMIX)". If converted to JSON Schema, it's a "NIEM Model Instance in JSON (NMIJ)."
 
 A NIEM Model Instance in XML (NMIX) is currently what is termed "NIEM." **The NIEM Model Instance abstracts NIEM up a level, in order to separate the modeling concepts from the specific technology of XML Schema.**
 
@@ -150,7 +156,7 @@ While creating platform dependent versions of NIEM for validation purposes is a 
 
 ## Benefits
 
-The major benefit is enabling the use of multiple model instance formats and views from one "source." The NIEM Model Instance can be transformed into any of these example formats, with appropriate translators written:
+The major benefit is enabling the use of multiple model instance formats and views from one "source." The NIEM Model Instance can be transformed into any of these example formats, once appropriate transformations are written:
 
 - XML Schema
 - JSON/JSON-LD<sup>[4](#json-ld_fn)</sup>
@@ -181,7 +187,7 @@ Additionally, UML tools use XMI as a format for exchanging diagrams, but impleme
 
 ## Getting Started with the Metamodel
 
-Development of the Metamodel and translators is ongoing, along with accompanying documentation. Visit https://webb.github.io/niem-metamodel/ for further technical information.
+Development of the Metamodel and transformations is ongoing, along with accompanying documentation. Visit https://webb.github.io/niem-metamodel/ for further technical information.
 
 ___
 
