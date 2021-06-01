@@ -2,9 +2,9 @@
 
 ## Abstract
 
-The "Metamodel" is a framework which expands the reach of NIEM into additional technologies beyond XML Schema. By separating modeling concepts from XML Schema, the Metamodel defines NIEM in a platform independent and agnostic format as a "NIEM Model Instance." This instance can then be transformed into specific technologies, negating the need to directly convert between disparate technologies and avoiding a resulting loss of functionality.
+The "Metamodel" is a framework which expands the reach of NIEM into additional technologies beyond XML Schema. By separating modeling concepts from XML Schema, the Metamodel defines NIEM in a technology and platform independent format as a "NIEM Model Instance." This instance can then be transformed into specific technologies, negating the need to directly convert between disparate technologies and avoiding a resulting loss of functionality.
 
-This platform independent and agnostic format will enable NIEM use in a variety of technologies, starting with XML Schema and JSON, and later including RDF and UML. It will enable a unified tool suite with converters for other technologies. It frees NIEM from the limitations of XML Schema. It provides an avenue for the community to transform NIEM into other needed technologies.
+This technology and platform independent format will enable NIEM use in a variety of technologies, starting with XML Schema and JSON, and later RDF, UML, _et al_. It will enable platform independent tool suites with converters for other technologies. It frees NIEM from the limitations of XML Schema. It enables the community to transform NIEM into other needed technologies.
 
 ## Background: How We Got Here
 
