@@ -1,4 +1,4 @@
-# NIEM-Modeling-Formalism
+# NIEM-Metamodel
 
 ## Files Here
 
@@ -7,7 +7,10 @@
 
 ## Other Metamodel-Related Repos
 
-- [[Webb Roberts]](https://github.com/webb/niem-metamodel)
-- [[Scott Renner]](https://github.com/iamdrscott/niem-metamodel)
-- [[Jim Cabral]](https://github.com/cabralje/niem-tools)
+- Technical Details and Code
+	- [Code](https://github.com/NIEM/NTAC/tree/main/niem-models)
+	- [Documentation](https://niem.github.io/NTAC/niem-models/)
+- Third Party
+	- [Scott Renner](https://github.com/iamdrscott/niem-metamodel)
+	- [Jim Cabral](https://github.com/cabralje/niem-tools)
 
